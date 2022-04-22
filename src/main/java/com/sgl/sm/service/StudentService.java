@@ -11,5 +11,5 @@ public interface StudentService extends IService<Student> {
 
      Student getStudentById(Long userId);
 
-    IPage<Student> getStudentByOpr(Page<Student> page, Student student);
+    IPage<Student> getStudentByOpr(Page<Student> studentPage, Student student);
 }

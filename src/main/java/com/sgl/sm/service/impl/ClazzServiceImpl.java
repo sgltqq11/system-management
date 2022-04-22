@@ -17,7 +17,7 @@ import java.util.List;
 @Transactional
 public class ClazzServiceImpl extends ServiceImpl<ClazzMapper, Clazz> implements ClazzService {
     @Override
-    public IPage<Clazz> getGradeByOpr(Page<Clazz> pageParam, Clazz clazz) {
+    public IPage<Clazz> getGradeByOpr(Page<Clazz> clazzPage, Clazz clazz) {
 
         QueryWrapper<Clazz> queryWrapper = new QueryWrapper<>();
 
@@ -38,7 +38,7 @@ public class ClazzServiceImpl extends ServiceImpl<ClazzMapper, Clazz> implements
         queryWrapper.orderByAsc("name");
 
         //分页查询的数据
-        Page<Clazz> page = baseMapper.selectPage(pageParam, queryWrapper);
+        Page<Clazz> page = baseMapper.selectPage(clazzPage, queryWrapper);
         return page;
     }
 

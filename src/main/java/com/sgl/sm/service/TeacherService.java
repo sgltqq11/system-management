@@ -11,6 +11,6 @@ public interface TeacherService extends IService<Teacher> {
 
     Teacher getTeacherById(Long userId);
 
-    IPage<Teacher> getTeacherByOpr(Page<Teacher> page, Teacher teacher);
+    IPage<Teacher> getTeacherByOpr(Page<Teacher> teacherPage, Teacher teacher);
 
 }

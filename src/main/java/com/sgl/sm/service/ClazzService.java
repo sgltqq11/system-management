@@ -8,7 +8,7 @@ import com.sgl.sm.pojo.Clazz;
 import java.util.List;
 
 public interface ClazzService extends IService<Clazz> {
-    IPage<Clazz> getGradeByOpr(Page<Clazz> page, Clazz clazz);
+    IPage<Clazz> getGradeByOpr(Page<Clazz> clazzPage, Clazz clazz);
 
     List<Clazz> getClazz();
 }

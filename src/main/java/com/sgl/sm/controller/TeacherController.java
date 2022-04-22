@@ -56,10 +56,10 @@ public class TeacherController {
             @ApiParam("查询条件") Teacher teacher
     ){
         //设置分页信息
-        Page<Teacher> page = new Page<Teacher>(pageNo,pageSize);
+        Page<Teacher> teacherPage = new Page<Teacher>(pageNo,pageSize);
 
         //调用服务层,传入分页信息和查询条件
-        IPage<Teacher> pageRs = teacherService.getTeacherByOpr(page,teacher);
+        IPage<Teacher> pageRs = teacherService.getTeacherByOpr(teacherPage,teacher);
 
 
         return Result.ok(pageRs);

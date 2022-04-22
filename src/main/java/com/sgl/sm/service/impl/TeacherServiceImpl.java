@@ -36,7 +36,7 @@ public class TeacherServiceImpl extends ServiceImpl<TeacherMapper, Teacher> impl
     }
 
     @Override
-    public IPage<Teacher> getTeacherByOpr(Page<Teacher> page, Teacher teacher) {
+    public IPage<Teacher> getTeacherByOpr(Page<Teacher> teacherPage, Teacher teacher) {
 
         QueryWrapper<Teacher> queryWrapper = new QueryWrapper<>();
 
@@ -51,8 +51,8 @@ public class TeacherServiceImpl extends ServiceImpl<TeacherMapper, Teacher> impl
             queryWrapper.like("name",teacherName);
         }
 
-        Page<Teacher> teacherPage = baseMapper.selectPage(page, queryWrapper);
+        Page<Teacher> page = baseMapper.selectPage(teacherPage, queryWrapper);
 
-        return teacherPage;
+        return page;
     }
 }

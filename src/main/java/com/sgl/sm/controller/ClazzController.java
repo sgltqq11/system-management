@@ -55,9 +55,9 @@ public class ClazzController {
             @ApiParam("查询条件") Clazz clazz
     ){
         //设置分页信息
-        Page<Clazz> page = new Page<>(pageNo,pageSize);
+        Page<Clazz> clazzPage = new Page<>(pageNo,pageSize);
         //调用服务层，传入分页信息和查询条件
-        IPage<Clazz> pageRs = clazzService.getGradeByOpr(page,clazz);
+        IPage<Clazz> pageRs = clazzService.getGradeByOpr(clazzPage,clazz);
 
         //封装Result对象并返回
         return Result.ok(pageRs);

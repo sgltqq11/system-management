@@ -7,7 +7,6 @@ import com.sgl.sm.pojo.Student;
 import com.sgl.sm.service.StudentService;
 import com.sgl.sm.util.MD5;
 import com.sgl.sm.util.Result;
-import com.sgl.sm.util.ResultCodeEnum;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -59,9 +58,9 @@ public class StudentController {
             ){
 
         //设置分页信息
-        Page<Student> page = new Page<>(pageNo,pageSize);
+        Page<Student> studentPage = new Page<>(pageNo,pageSize);
         //调用服务层,传入分页信息和查询条件
-        IPage<Student> pageRs = studentService.getStudentByOpr(page,student);
+        IPage<Student> pageRs = studentService.getStudentByOpr(studentPage,student);
 
         //封装对象并返回
         return Result.ok(pageRs);

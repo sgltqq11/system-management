@@ -6,7 +6,6 @@ import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.sgl.sm.mapper.StudentMapper;
-import com.sgl.sm.pojo.Admin;
 import com.sgl.sm.pojo.LoginForm;
 import com.sgl.sm.pojo.Student;
 import com.sgl.sm.service.StudentService;
@@ -36,7 +35,7 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
     }
 
     @Override
-    public IPage<Student> getStudentByOpr(Page<Student> pageParam, Student student) {
+    public IPage<Student> getStudentByOpr(Page<Student> studentPage, Student student) {
 
         QueryWrapper<Student> queryWrapper = new QueryWrapper<>();
 
@@ -56,7 +55,7 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
         queryWrapper.orderByDesc("name");
 
         //分页查询的数据
-        Page<Student> page = baseMapper.selectPage(pageParam, queryWrapper);
+        Page<Student> page = baseMapper.selectPage(studentPage, queryWrapper);
 
         return page;
     }
